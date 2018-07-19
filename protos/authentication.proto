@@ -4,16 +4,16 @@ package com.whuthm.happychat.proto.api;
 import "base.proto";
 
 message LoginRequest {
-    BaseResponse response = 1;
-    string username = 2;
-    string password = 3;
-    string public_key = 4;
+    string username = 1;
+    string password = 2;
+    string public_key = 3;
 }
 
 message LoginResponse {
-    string user_id = 1;
+    BaseResponse response = 1;
+    string user_id = 2;
     /** 已加密token，通过public_key加密*/
-    string token = 2;
+    string token = 3;
     /** 已加密keystore，用于消息加解密， 通过public_key加密*/
-    string keystore = 3;
+    string keystore = 4;
 }
