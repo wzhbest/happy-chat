@@ -5,21 +5,10 @@ import "base.proto";
 
 message MessageResponse {
     BaseResponse response = 1;
-    int64 uid = 2;
-    string type = 3;
-    string from = 4;
-    string to = 5;
-    /** 类型：Chat, GroupChat, Discussion*/
-    string conversation_type = 6;
-    /** 通过keystore加密, json*/
-    string body = 7;
-    int64 time = 8;
-    MentionedInfo mentioned_info = 9;
-    /** 扩展，json*/
-    string attributes = 10;
+    MessageBean data = 2;
 }
 
-message MentionedInfo {
+message MentionedInfoBean {
     /** 1: @all; 2: @users*/
     int32 type = 1;
     repeated string user_ids = 2;
@@ -33,13 +22,13 @@ message MessageSendRequest {
     string conversation_type = 4;
     /** 通过keystore加密*/
     string body = 5;
-    MentionedInfo mentioned_info = 6;
+    MentionedInfoBean mentioned_info = 6;
     string attributes = 7;
 }
 
 message MessagesResponse {
     BaseResponse response = 1;
-    repeated MessageResponse data = 2;
+    repeated MessageBean data = 2;
     int32 count = 3;
     bool more = 4;
 }
@@ -48,4 +37,19 @@ message MessageSendResponse {
     BaseResponse response = 1;
     int64 uid = 2;
     int64 time = 3;
+}
+
+message MessageBean {
+    int64 uid = 2;
+    string type = 3;
+    string from = 4;
+    string to = 5;
+    /** 类型：Chat, GroupChat, Discussion*/
+    string conversation_type = 6;
+    /** 通过keystore加密, json*/
+    string body = 7;
+    int64 time = 8;
+    MentionedInfoBean mentioned_info = 9;
+    /** 扩展，json*/
+    string attributes = 10;
 }
