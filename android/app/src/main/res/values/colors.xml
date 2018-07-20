@@ -3,4 +3,57 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_pressed">#33000000</color>
+
+    <color name="primary_green">#44D080</color>
+    <!--主色，蓝色，老师端-->
+    <color name="primary_blue">#FF4385F5</color>
+    <!--主色，橙色，ta端-->
+    <color name="primary_orange">#FF9900</color>
+
+    <!--辅助色，橙色-->
+    <color name="accent_orange">#FF7700</color>
+
+    <!--辅助色，深橙色-->
+    <color name="accent_orange_deep">#FD631F</color>
+
+    <!--辅助色，橘色 （橙色）亮-->
+    <color name="accent_orange_light">#FF9900</color>
+    <!--辅助色，深蓝色-->
+    <color name="accent_blue_dark">#496EDA</color>
+    <!--辅助色，蓝色-->
+    <color name="accent_blue">#16AFE9</color>
+    <!--辅助色，浅蓝色-->
+    <color name="accent_blue_light">#D7EDFE</color>
+    <!--辅助色，黄色-->
+    <color name="accent_yellow">#FFCC00</color>
+    <!--辅助色，红色-->
+    <color name="accent_red_light">#FF7C8A</color>
+    <color name="tip_red">#FA6359</color>
+
+    <!--辅助色，红色-->
+    <color name="accent_red">#DB2440</color>
+    <color name="red">#ff0000</color>
+
+    <!--辅助色 紫色 -->
+    <color name="accent_purple">#B76DFF</color>
+    <color name="purple">#79778E</color>
+
+    <!--辅助色 绿色 -->
+    <color name="accent_green">#54AE37</color>
+    <color name="accent_green_light">#69D999</color>
+
+    <color name="white_light">#F7F7F7</color>
+
+    <color name="gray">#CCCCCC</color>
+    <!-- UI灰5-->
+    <color name="gray_dark">#999999</color>
+    <!-- UI灰6-->
+    <color name="gray_dark_deep">#666666</color>
+
+    <!--分割线-->
+    <color name="divider_list_color">#ECECEC</color>
+
 </resources>

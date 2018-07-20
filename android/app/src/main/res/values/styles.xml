@@ -8,4 +8,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="LoginEditTextStyle">
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!--   通用Button style    start  -->
+    <style name="PrimaryButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textSize">@dimen/font_size_14</item>
+        <item name="android:paddingTop">@dimen/dimen_12</item>
+        <item name="android:paddingBottom">@dimen/dimen_12</item>
+        <item name="android:textColor">@color/whole_solid_button_text_selector</item>
+    </style>
+
+    <style name="BottomWholeWidthPartnerBlueSolidButton" parent="PrimaryButtonStyle">
+        <item name="android:background">@drawable/bg_corner_rect_partner_blue_solid_selector</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_12</item>
+        <item name="android:layout_marginRight">@dimen/dimen_12</item>
+        <item name="android:minHeight">@dimen/dimen_48</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+    </style>
 </resources>

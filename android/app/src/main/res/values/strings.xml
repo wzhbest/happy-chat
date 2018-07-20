@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">HappyChat</string>
+    <string name="app_name">嗨起来</string>
+
+    <string name="text_login">登 录</string>
 </resources>
