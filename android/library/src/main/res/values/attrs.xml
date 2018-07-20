@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BadgeView">
+        <attr name="fillColor" format="color" />
+        <attr name="strokeColor" format="color" />
+        <attr name="android:textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="UpView">
+        <attr name="max_digit" format="integer" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_color" format="color" />
+        <attr name="shining_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorfulTextView">
+        <attr name="bgRoundRadius" format="boolean" />
+        <attr name="bgRadius" format="dimension"/>
+        <attr name="bgSolidColor" format="color"/>
+        <attr name="bgStrokeColor" format="color"/>
+        <attr name="bgStrokeWidth" format="dimension"/>
+
+        <!-- drawable line -->
+        <attr name="leftLineColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lineHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LimitEditText">
+        <attr name="filterMode">
+            <enum name="NUMBER" value="0" />
+            <enum name="A_Z_NUMBER" value="1" />
+            <enum name="EMAIL" value="2" />
+            <enum name="PASSWORD" value="3" />
+            <enum name="CHINESE_ENGLISH" value="4" />
+            <enum name="CHINESE_ENGLISH_NUMBER" value="5" />
+            <enum name="CHINESE_ENGLISH_SPACE_DOT" value="6" />
+            <enum name="NO_CHINESE" value="7" />
+            <enum name="NO_EMOJI" value="8" />
+            <enum name="NO_CHINESE_EMOJI" value="9" />
+            <enum name="NONE" value="10" />
+        </attr>
+        <attr name="maxLength" format="integer" />
+    </declare-styleable>
+
+</resources>
