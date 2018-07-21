@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.whuthm.happychat.proto.api;
+
+import "base.proto";
+
+message UserConfigurationResponse {
+    BaseResponse response = 1;
+    /** 用户状态：0 正常*/
+    int32 status = 3;
+}
+
+message GlobalConfigurationResponse {
+    BaseResponse response = 1;
+    /** 消息缓存多少小时*/
+    int32 msg_cache_hours = 2;
+    string update_version = 3;
+    string update_url = 4;
+    string release_note = 5;
+}

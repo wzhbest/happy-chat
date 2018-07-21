@@ -1,0 +1,24 @@
+syntax = "proto3";
+package com.whuthm.happychat.proto.api;
+
+import "base.proto";
+
+message UserResponse {
+    BaseResponse response = 1;
+    UserBean data = 2;
+}
+
+message UsersResponse {
+    BaseResponse response = 1;
+    repeated UserBean data = 2;
+    int32 count = 3;
+    bool more = 4;
+}
+
+message UserBean {
+    string id = 1;
+    string name = 2;
+    string nick = 3;
+    int32 gender = 4;
+    string avatar = 5;
+}

@@ -1,0 +1,72 @@
+syntax = "proto3";
+package com.whuthm.happychat.proto.api;
+
+message BoolRequest {
+	bool data = 1;
+}
+
+message IntRequest {
+	int32 data = 1;
+}
+
+message StringListRequest{
+	repeated string data = 1;
+}
+
+message LongRequest {
+	int64 data = 1;
+}
+
+message DoubleRequest {
+	double data = 1;
+}
+
+message StringRequest {
+	string data = 1;
+}
+
+message BaseResponse{
+	int32 code=1;
+	string message=2;
+	string hint_message=3;
+}
+
+message StringResponse{
+	BaseResponse response=1;
+	string data=2;
+}
+
+message BoolResponse {
+	BaseResponse response=1;
+	bool data = 2;
+}
+
+message IntResponse {
+    BaseResponse response=1;
+    int32 data = 2;
+}
+
+message LongResponse {
+    BaseResponse response=1;
+    int64 data = 2;
+}
+
+message DoubleResponse {
+    BaseResponse response=1;
+    double data = 2;
+}
+
+message StringListResponse {
+    BaseResponse response=1;
+    repeated string data = 2;
+}
+
+message LongListResponse{
+	BaseResponse response = 1;
+	repeated int64 data = 2;
+}
+
+message Response {
+	BaseResponse response=1;
+}
+

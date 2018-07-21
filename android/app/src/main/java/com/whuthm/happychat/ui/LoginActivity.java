@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.barran.lib.utils.StringUtil;
 import com.barran.lib.utils.log.Logs;
@@ -89,16 +90,18 @@ public class LoginActivity extends BaseActivity {
                     public void onNext(Authentication.LoginResponse value) {
                         Logs.v("login suc: token=" + value.getToken() + ", key= "
                                 + value.getKeystore());
+                        Toast.makeText(getApplication(), "success:" + value.getUserId(), Toast.LENGTH_LONG).show();
                     }
                     
                     @Override
                     public void onError(Throwable e) {
                         Logs.v("login fail " + e.getMessage());
+                        Toast.makeText(getApplication(), "error", Toast.LENGTH_LONG).show();
                     }
                     
                     @Override
                     public void onComplete() {
-                        
+
                     }
                 });
     }

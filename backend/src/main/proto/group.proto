@@ -1,0 +1,35 @@
+syntax = "proto3";
+package com.whuthm.happychat.proto.api;
+
+import "base.proto";
+
+message GroupResponse {
+    BaseResponse response = 1;
+    GroupBean data = 2;
+}
+
+message GroupMemberBean {
+    string id = 1;
+    string name = 2;
+    string nick = 3;
+    /** 角色：0，普通成员；1， 管理员*/
+    int32 role = 4;
+}
+
+message GroupsResponse {
+    BaseResponse response = 1;
+    repeated GroupBean data = 2;
+    int32 count = 3;
+    bool more = 4;
+}
+
+message GroupBean {
+    string id = 1;
+    string name = 2;
+    /** 类型：GroupChat, Discussion*/
+    string type = 3;
+    string desc = 4;
+    string creator = 5;
+    int32 member_count = 6;
+    repeated GroupMemberBean members = 7;
+}

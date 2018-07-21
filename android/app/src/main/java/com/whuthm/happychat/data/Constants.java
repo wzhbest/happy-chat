@@ -9,8 +9,10 @@ package com.whuthm.happychat.data;
 public class Constants {
     
     public static final int HTTP_TIMEOUT = 10;// unit: second
-    
-    public static final String BASE_URL = "http://www.whuthm.com";
+
+    //模拟器访问127.0.0.1访问不成功，需要使用本机ip地址映射10.0.2.2
+    //正常网址是www.whuthm.com
+    public static final String BASE_URL = "http://10.0.2.2:8080";
     
     public static final String HTTP_CACHE_DIR = "http_cache";
     

@@ -5,6 +5,8 @@ import android.content.Context;
 import com.whuthm.happychat.data.Constants;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
@@ -36,11 +38,15 @@ public class RetrofitClient {
     private RetrofitClient(Context context) {
         this.context = context;
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-type", "application/x-protobuf");
+        //TODO 添加token
+        //headers.put("token", "");
         mOkHttpClient = builder
                 .cache(new Cache(new File(context.getCacheDir().getAbsolutePath(),
                         Constants.HTTP_CACHE_DIR), Constants.HTTP_CACHE_SIZE))
-                .addInterceptor(new HttpInterceptor())
+                .addInterceptor(new HttpInterceptor(headers))
                 .addNetworkInterceptor(new NetworkInterceptor(context))
                 .connectTimeout(Constants.HTTP_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(Constants.HTTP_TIMEOUT, TimeUnit.SECONDS)

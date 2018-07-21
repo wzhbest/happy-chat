@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.whuthm.happychat.proto.api;
+
+import "base.proto";
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+    string public_key = 3;
+}
+
+message LoginResponse {
+    BaseResponse response = 1;
+    string user_id = 2;
+    /** 已加密token，通过public_key加密*/
+    string token = 3;
+    /** 已加密keystore，用于消息加解密， 通过public_key加密*/
+    string keystore = 4;
+}
