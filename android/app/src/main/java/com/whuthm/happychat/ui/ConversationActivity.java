@@ -3,7 +3,7 @@ package com.whuthm.happychat.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.whuthm.happychat.base.BaseActivity;
+import com.barran.lib.app.BaseActivity;
 
 
 /**

@@ -3,8 +3,8 @@ package com.whuthm.happychat.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.barran.lib.app.BaseActivity;
 import com.whuthm.happychat.R;
-import com.whuthm.happychat.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
     
