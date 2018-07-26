@@ -38,11 +38,11 @@ public class RetrofitClient {
     private RetrofitClient(Context context) {
         this.context = context;
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
+        
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-type", "application/x-protobuf");
-        //TODO 添加token
-        //headers.put("token", "");
+        // TODO 添加token
+        // headers.put("token", "");
         mOkHttpClient = builder
                 .cache(new Cache(new File(context.getCacheDir().getAbsolutePath(),
                         Constants.HTTP_CACHE_DIR), Constants.HTTP_CACHE_SIZE))
@@ -68,5 +68,9 @@ public class RetrofitClient {
     
     public static ApiService api() {
         return sInstance.mApiService;
+    }
+    
+    public static OkHttpClient okHttp() {
+        return sInstance.mOkHttpClient;
     }
 }

@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:orientation="vertical"
-    android:padding="@dimen/dimen_24">
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -16,7 +15,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_24"
+        android:paddingRight="@dimen/dimen_24">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -47,21 +48,30 @@
                 android:drawableLeft="@drawable/password"
                 android:drawablePadding="@dimen/dimen_6"
                 android:hint="请输入密码"
+                android:inputType="textPassword"
                 android:maxLength="20" />
+
+            <ImageView
+                android:id="@+id/activity_login_image_hide_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:src="@drawable/password_hidden" />
 
         </FrameLayout>
 
-    </LinearLayout>
+        <com.barran.lib.view.text.ColorfulTextView
+            android:id="@+id/fragment_pwd_login_tv_submit"
+            style="@style/BottomWholeWidthPartnerBlueSolidButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:enabled="false"
+            android:text="@string/text_login"
+            android:textColor="@android:color/white"
+            app:bgRoundRadius="true" />
 
-    <com.barran.lib.view.text.ColorfulTextView
-        android:id="@+id/fragment_pwd_login_tv_submit"
-        style="@style/BottomWholeWidthPartnerBlueSolidButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_32"
-        android:enabled="false"
-        android:text="@string/text_login"
-        android:textColor="@android:color/white"
-        app:bgRoundRadius="true" />
+    </LinearLayout>
 
 </LinearLayout>

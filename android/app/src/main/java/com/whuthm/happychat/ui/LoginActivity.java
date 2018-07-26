@@ -3,8 +3,10 @@ package com.whuthm.happychat.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,9 @@ public class LoginActivity extends BaseActivity {
     private LimitEditText mETAccount;
     private LimitEditText mETPassword;
     private TextView mTVSubmit;
+    private ImageView mIvPasswordHidden;
+    
+    private boolean isPasswordHidden = true;
     
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,13 +58,12 @@ public class LoginActivity extends BaseActivity {
             }
         }.setFilterMode(LimitTextWatcher.FilterMode.NO_EMOJI));
         
+        ClickListener listener = new ClickListener();
+        mIvPasswordHidden = findViewById(R.id.activity_login_image_hide_password);
+        mIvPasswordHidden.setOnClickListener(listener);
+        
         mTVSubmit = findViewById(R.id.fragment_pwd_login_tv_submit);
-        mTVSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reqLogin();
-            }
-        });
+        mTVSubmit.setOnClickListener(listener);
     }
     
     private void checkSubmitButton() {
@@ -89,5 +93,31 @@ public class LoginActivity extends BaseActivity {
                     }
                 });
         
+    }
+    
+    private class ClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                
+                case R.id.activity_login_image_hide_password:
+                    isPasswordHidden = !isPasswordHidden;
+                    if (isPasswordHidden) {
+                        mIvPasswordHidden.setImageResource(R.drawable.password_hidden);
+                        mETPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD
+                                | InputType.TYPE_CLASS_TEXT);
+                    }
+                    else {
+                        mIvPasswordHidden.setImageResource(R.drawable.password_visible);
+                        mETPassword.setInputType(
+                                InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    }
+                    break;
+                
+                case R.id.fragment_pwd_login_tv_submit:
+                    reqLogin();
+                    break;
+            }
+        }
     }
 }
